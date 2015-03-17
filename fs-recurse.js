@@ -15,8 +15,6 @@
 					
 					_.each(ignore, function(filter){
 						fileExcluded = file.match(filter);
-						
-						fileExcluded && console.info('EXCLUDE', file, filter);
 					});
 					
 					return !fileExcluded;
