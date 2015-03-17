@@ -19,11 +19,12 @@ cursor passes four arguments :
 var recurse = require('./fs-recurse');
 
 recurse('test', function(path, filename, type, cursor){
-	console.log(path, filename, type);
-	
-	// Do async operation on files ...
+	fs.stat(path + '/' + file, function(err, stats){
+		cursor();
+		// Do async operation on files ...
+	});
 }, function(){
-  console.log('Done!');
+	console.log('Done!');
 }, [/\.txt$/, 'index.html']);
 // *.txt and index.html will be ignored
 ```
