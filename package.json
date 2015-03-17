@@ -1,0 +1,26 @@
+{
+	"name": "fs-recurse",
+	"version": "0.0.1",
+	"homepage": "https://github.com/dreadcast/fs-recurse",
+	"description": "Walk through directories asynchronously with callback on each file/folder",
+	"author": "Raphael Gully",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:dreadcast/fs-recurse.git"
+	},
+	"license": "WTFPL",
+	"keywords": [
+		"fs",
+		"files",
+		"recursive",
+		"utils"
+	],
+	"dependencies": {
+		"hidash": "git+https://dreadcast@github.com/dreadcast/hidash.git#0.2.1"
+	},
+	
+	"devDependencies": {
+		"operative": "git+https://dreadcast@github.com/dreadcast/operative.git"
+	},
+	"main": "fs-recurse.js"
+}
