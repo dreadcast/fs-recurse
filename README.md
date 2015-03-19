@@ -7,13 +7,31 @@ npm install fs-recurse
 ```
 ### Signature
 ```
-recurse(String path, Function cursor, Function callback, Array ignore);
+recurse(String path, Function callback, Function done, Array ignore);
 ```
-cursor passes four arguments : 
-* path (current path)
-* filename (current file name)
-* type (file extension or 'folder')
-* cursor (call this after executing any async operation on current file)
+#### Arguments
+
+1.	`path String`
+	
+	Path in which you want to recurse
+
+2.	`callback Function` 
+
+	Receives four arguments : 
+
+	* `path String` current path
+	* `filename String` current file name
+	* `type String` file extension or 'folder'
+	* `cursor Function` call this function after executing any async operation on current file
+
+3.	`done Function` 
+
+	Invoked when recursion is done
+	
+4.	`ignore Array`
+
+	[Anymatch](https://github.com/es128/anymatch) compatible filters...
+	
 
 ```javascript
 var recurse = require('./fs-recurse');

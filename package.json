@@ -16,6 +16,7 @@
 		"utils"
 	],
 	"dependencies": {
+		"anymatch": "1.1.0",
 		"hidash": "git+https://dreadcast@github.com/dreadcast/hidash.git#0.2.1"
 	},
 	
