@@ -31,11 +31,5 @@
 		});
 	};
 	
-	recurse.extend = function(){
-		fs.recurse = recurse;
-		
-		return fs;
-	};
-	
 	module.exports = recurse;
 })();

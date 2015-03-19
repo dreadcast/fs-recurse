@@ -5,10 +5,12 @@ Walk through directories asynchronously, with callback on each file/folder and i
 ```
 npm install fs-recurse
 ```
+
 ### Signature
 ```
 recurse(String path, Function callback, Function done, Array ignore);
 ```
+
 #### Arguments
 
 1.	`path String`
@@ -33,6 +35,8 @@ recurse(String path, Function callback, Function done, Array ignore);
 	[Anymatch](https://github.com/es128/anymatch) compatible filters...
 	
 
+### Example
+
 ```javascript
 var recurse = require('./fs-recurse');
 
@@ -45,16 +49,4 @@ recurse('test', function(path, filename, type, cursor){
 	console.log('Done!');
 }, [/\.txt$/, 'index.html']);
 // *.txt and index.html will be ignored
-```
-
-## Extend FS
-
-Alternatively, you can extend Node's fs module : 
-
-```javascript
-var fs = require('./fs-recurse').extend();
-
-fs.recurse('test', function(path, file, type, cursor){
-	//...
-});
 ```
