@@ -19,7 +19,6 @@
 		"utils"
 	],
 	"dependencies": {
-		"fs-extra": "0.16.4",
 		"anymatch": "1.1.0",
 		"lowerdash": "0.2.3"
 	},
