@@ -2,7 +2,7 @@
 	var Path = require('path'),
 		anymatch = require('anymatch'),
 		fs = require('fs'),
-		_ = require('hidash');
+		_ = require('lowerdash');
 	
 	var defaultIgnore = [/^\./];
 		
