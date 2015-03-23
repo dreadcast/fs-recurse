@@ -12,13 +12,19 @@
 		
 		var matchers = anymatch(ignore);
 		
-		fs.readdir(path, function(error, dir){
+		fs.readdir(path, function(err, dir){
+			if(err)
+				console.error('Error reading dir ' + path, err);
+			
 			dir = dir.filter(function(file){
 				return !matchers(file);
 			})
 
 			_.eachAsync(dir, function(file, index, cursor){				
 				fs.stat(Path.join(path, file), function(err, stats){
+					if(err)
+						console.error('Error stat of file ' + Path.join(path, file), err);
+
 					if(stats.isDirectory())
 						cb(path, file, 'folder', function(){
 							recurse(Path.join(path, file), cb, cursor, ignore);
