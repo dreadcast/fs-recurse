@@ -1,6 +1,6 @@
 {
 	"name": "fs-recurse",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"homepage": "https://github.com/dreadcast/fs-recurse",
 	"description": "Walk through directories asynchronously with callback on each file/folder",
 	"author": "Raphael Gully",
