@@ -10,22 +10,22 @@
 		if(!ignore)
 			ignore = defaultIgnore;
 		
+		var matchers = anymatch(ignore);
+		
 		fs.readdir(path, function(error, dir){
-			var matchers = anymatch(ignore);
-			
-			_.remove(dir, matchers);
+			dir = dir.filter(function(file){
+				return !matchers(file);
+			})
 
 			_.eachAsync(dir, function(file, index, cursor){				
 				fs.stat(Path.join(path, file), function(err, stats){
-					var type = 'folder';
-
 					if(stats.isDirectory())
-						recurse(Path.join(path, file), cb, cursor, ignore);
+						cb(path, file, 'folder', function(){
+							recurse(Path.join(path, file), cb, cursor, ignore);
+						});
 					
 					else if(stats.isFile())
-						type = Path.extname(file).replace(/^\./, '');
-					
-					cb(path, file, type, cursor);
+						cb(path, file, Path.extname(file).replace(/^\./, ''), cursor);
 				});
 			}, done);
 		});
