@@ -26,5 +26,9 @@
 	"devDependencies": {
 		"operative": "git+https://dreadcast@github.com/dreadcast/operative.git"
 	},
-	"main": "fs-recurse.js"
+	"main": "fs-recurse.js",
+	
+	"scripts": {
+		"test": "mocha playground"
+	}
 }
